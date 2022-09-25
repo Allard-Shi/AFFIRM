@@ -1,5 +1,6 @@
 # AFFIRM: Affinity Fusion-based Framework for Iteratively Random Motion correction of multi-slice fetal brain MRI 
 This repository contains relevant code and demo using a deep recursive fetal motion estimation and correction based on slice and volume affinity fusion, i.e., AFFIRM. The concept can be applied to any similar scenario. The relevant work is published in IEEE Transactions on Medical Imaging [(https://ieeexplore.ieee.org/document/9896894)][reference].
+
 Feel free to contact me (allard.w.shi at gmail dot com) or open an issue if you have any question or comment. 
 
 ## Introduction
@@ -42,8 +43,9 @@ Other used repository links:
 * nipype 1.16.4
 
 ## Training and Application
-Training: please refer to train.py and prepare two files in *.npy as training and validation set using data_complie.py. 
-Testing: We provide one 37-GA real-world demo in the folder ./Data/demo/. Two steps are thus needed:
+**Training**: please refer to train.py and prepare two files in *.npy as training and validation set using data_complie.py. 
+
+**Testing**: We provide one 37-GA real-world demo in the folder ./Data/demo/. Two steps are thus needed:
 * Run `main.py` to estimate the fetal brain motion.
 * Use NiftyMIC command `niftymic_reconstruct_volume_from_slices`to perform super-resolution reconstruction.
 * Rerun `main.py` by setting `init_reference = False` and repeat step 2&3 several times to correct the motion.
