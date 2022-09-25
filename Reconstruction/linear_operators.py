@@ -1,37 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-
-
-
-
-
-
-@author: wenshi
-"""
-
 
 import itk
 from psf import PSF 
 import numpy as np
 import pysitk.simple_itk_helper as sitkh
 
-
-
-
-
-
 class LinearOperators(object):
     """
     linear operator include both forward and adjoint 
-
     
     """
-    
-    
-    
-    
-    
 
     ##
     # Store relevant information
@@ -313,30 +292,6 @@ class LinearOperators(object):
                 cov=self._predefined_covariance)
 
         return cov
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

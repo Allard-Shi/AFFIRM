@@ -91,22 +91,6 @@ class Slice2VolumeRegistration(Registration):
 
         super().__init__(savepath=savepath,
                          learningrate=learningrate)
-    
-                
-#    registration_method.SetOptimizerAsExhaustive(numberOfSteps=[3,3,3,0,0,0],
-#                                                 stepLength=np.pi/60)
-#    registration_method.SetOptimizerScales([1,1,1,0,0,0])
-    
-#    registration_method.SetOptimizerAsRegularStepGradientDescent(learningRate=0.2,
-#                                                                          minStep=1e-7,
-#                                                                          numberOfIterations=400,
-#                                                                          gradientMagnitudeTolerance=1e-9)
-#    
-#    registration_method.SetOptimizerAsRegularStepGradientDescent(learningRate=0.1,
-#                                                                  minStep=1e-6,
-#                                                                  numberOfIterations=1000,
-#                                                                  gradientMagnitudeTolerance=1e-9)
-        
           
     def _run(self):
         

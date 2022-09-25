@@ -1,4 +1,3 @@
-
 """
 
 
@@ -212,10 +211,8 @@ class ReconSolver(object):
         self.reconstruction_sitk = sitkh.get_sitk_from_itk_image(self.reconstruction_itk)
 
     def get_reconstruction(self):
-        
-        
+         
         return self.reconstruction_sitk
-
 
     def get_inital_volume(self):
         
@@ -349,10 +346,7 @@ if __name__ == '__main__':
 #    SRR0._run()
 ##    
 #    recon = SRR0.get_reconstruction()
-#    sitk.WriteImage(recon,path+'recon_niftymic.nii.gz')
-
-
-    
+#    sitk.WriteImage(recon,path+'recon_niftymic.nii.gz')  
     
     SDA = ScatteredDataApproximation(slices=slices,
                                      reconstruction_sitk=recon0_sitk)    
@@ -363,11 +357,5 @@ if __name__ == '__main__':
     recon = sitk.Cast(recon, sitk.sitkFloat32)
     
     sitk.WriteImage(recon,path+'recon_sda.nii.gz')
-
-
-
-
-
-
 
 

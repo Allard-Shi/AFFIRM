@@ -1,16 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-
-This file is modified from the Ebner
-
-
-
-@author: wenshi
-"""
 
 import numpy as np
-
 
 class PSF(object):
 

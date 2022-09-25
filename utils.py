@@ -1,9 +1,14 @@
+'''
+This utils file was copied from VoxelMorph
+
+'''
+
+
 import numpy as np
 import tensorflow as tf
 import keras
 import tensorflow.keras.backend as K
 import tensorflow.keras.layers as KL
-
 import neuron as ne
 import layers
 
@@ -18,10 +23,8 @@ def transform(img, trf, interp_method='linear', rescale=None):
     y_img = layers.SpatialTransformer(interp_method=interp_method)([img_input, trf_scaled])
     return keras.Model([img_input, trf_input], y_img).predict([img, trf])
 
-
 def is_affine(shape):
     return len(shape) == 1 or (len(shape) == 2 and shape[0] + 1 == shape[1])
-
 
 def extract_affine_ndims(shape):
     if len(shape) == 1:
@@ -30,7 +33,6 @@ def extract_affine_ndims(shape):
     else:
         return int(shape[0])
 
-
 def affine_shift_to_identity(trf):
     ndims = extract_affine_ndims(trf.shape.as_list())
     trf = tf.reshape(trf, [ndims, ndims + 1])
@@ -38,13 +40,11 @@ def affine_shift_to_identity(trf):
     trf += tf.eye(ndims + 1)
     return trf
 
-
 def affine_identity_to_shift(trf):
     ndims = int(trf.shape.as_list()[-1]) - 1
     trf = trf - tf.eye(ndims + 1)
     trf = trf[:ndims, :]
     return tf.reshape(trf, [ndims * (ndims + 1)])
-
 
 def gaussian_blur(tensor, level, ndims):
     """
@@ -63,6 +63,4 @@ def gaussian_blur(tensor, level, ndims):
         return tensor
     else:
         raise ValueError('Gaussian blur level must not be less than 1')
-
-
 
